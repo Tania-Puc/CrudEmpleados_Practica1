@@ -6,9 +6,9 @@ const conexion=require('./database/db');
 
 router.get('/', (req,res)=>{
 
-    //'SELECT * FROM `empleados` WHERE `fecha_ingreso`>= CURDATE()'
+    
+
     conexion.query("SELECT * FROM `empleados`", (error,results)=>{
-        
 
         
      
@@ -18,7 +18,7 @@ router.get('/', (req,res)=>{
 
         }else
         {
-             res.send(results);
+            res.render('index', {results:results});
 
 
 
